@@ -34,3 +34,24 @@ const userAge = +prompt('how old are you?')
 
 // continue - если у нас есть условие и мы не хотим, чтобы цикл прерывался
 // break - если мы хотим досрочно прервать выполнение цикла
+console.log('цикл сейчас начнется')
+
+for (let i = 0; i < 10; i++) {
+	console.log(i)
+
+	if (i === 3) {
+		console.log('Цикл прерван досрочно')
+		break
+	}
+}
+
+console.log('цикл закончился сейчас начнется другой цикл')
+
+for (let i = 0; i < 10; i++) {
+	if (i % 2 === 0) {
+		continue
+	}
+
+	console.log(i)
+}
+

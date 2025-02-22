@@ -109,3 +109,15 @@ const obj1 = {
 
 const obj2 = Object.assign({}, obj1)
 const obj3 = { ...obj1 }
+
+-----------------------------------------
+	// способ объединения объекта
+const obj1 = {
+	age: 20,
+}
+
+const objNew = {
+	name: 'Dima',
+}
+
+const user = Object.assign({}, obj1, objNew)

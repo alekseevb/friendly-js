@@ -65,6 +65,27 @@ function getSecretMessage(name) {
 
 console.log(getSecretMessage())
 
+// function declaration
+//  главная особенность function declaration - это ее возможность использовать до объявления
+//  можно перезаписать
+//  внутри мы можем получить доступ к неявной переменной argument
+function sum(a, b) {
+	return a + b
+}
+
+// function Expression
+//  такую функцию нельзя переопределить
+//  такую функцию нельзя использовать до ее использования
+const logHello = function () {
+	console.log('Привет')
+}
+
+// arrow function
+//  такую функцию нельзя использовать до ее использования
+//  не имеет доступ к неявной переменной argument
+//  нет своего контекста
+const logHello2 = () => {}
+
 /*
  * Как правильно называть функцию:
  * get - получить какое-то значение

@@ -121,3 +121,12 @@ const objNew = {
 }
 
 const user = Object.assign({}, obj1, objNew)
+
+-----------------------------------------
+	const logGuestInfo = guest => {
+	console.log(`
+		имя ${guest.name}
+		Возраст ${guest.age}
+		Дата выезда ${guest.orderInfo?.stayDate?.to ?? 'не указана'}`) // опциональная цепочка, которая помогает 
+		// безопасно проверить объект
+}

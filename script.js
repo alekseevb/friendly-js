@@ -99,3 +99,13 @@ const logHello2 = () => {}
  * calc - вычислить что-то
  * check - проверить что-то
  */
+
+const obj1 = {
+	name: 'Алексей',
+	age: 20,
+}
+
+// два способа копирования объекта
+
+const obj2 = Object.assign({}, obj1)
+const obj3 = { ...obj1 }

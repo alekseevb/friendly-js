@@ -130,3 +130,18 @@ const user = Object.assign({}, obj1, objNew)
 		Дата выезда ${guest.orderInfo?.stayDate?.to ?? 'не указана'}`) // опциональная цепочка, которая помогает 
 		// безопасно проверить объект
 }
+
+---------------------------------------
+
+const calculator = {
+	read() {
+		this.a = Number(prompt('Введите значение буквы а'))
+		this.b = Number(prompt('Введите значение буквы b'))
+	},
+	sum() {
+		return this.a + this.b
+	},
+	mul() {
+		return this.a * this.b
+	},
+}

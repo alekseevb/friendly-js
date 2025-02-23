@@ -199,3 +199,16 @@ console.log('Повторяет 4 раза указанное слово', name.
 console.log('Заменяет слов', name.replace('Aleksei', 'Дмитрий'))
 console.log('Заменяет все вхождение', name.replaceAll('Aleksei', 'Дмитрий'))
 console.log('Позволяет разбить массив на строку', text.split(' '))
+
+----------------------------------------проверка имени
+const value = prompt('Введите ваше имя?')
+
+const clearValue = value.trim().toLowerCase()
+
+if (clearValue.length === 0) {
+	alert('Ошибка! Имя не может быть пустым')
+}
+
+if (clearValue.includes('админ')) {
+	alert('Вы не можете занять это имя')
+}

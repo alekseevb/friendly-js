@@ -145,3 +145,29 @@ const calculator = {
 		return this.a * this.b
 	},
 }
+
+-------------------------------------------
+const price = 99.555
+
+console.log('Округление до 0 знаков после запятой', price.toFixed())
+console.log('Округление до 3 знака с начала', price.toPrecision(3))
+console.log('Приводит число к строке', price.toString(3))
+
+console.log('Случайное число:', Math.random())
+console.log('Получение модуля числа -100:', Math.abs(-100))
+console.log('Возведение в степень 3 числа 3:', Math.pow(3, 3))
+console.log('Получение квадратного корня числа', Math.sqrt(4))
+console.log('Получение кубического корня числа', Math.cbrt(8))
+console.log('Получение минимального числа', Math.min(-1, 10, 100))
+console.log('Получение максимального числа', Math.max(-1, 10, 100))
+
+//Чтобы заработало свойство min с массивом надо перед массивом указать точки
+const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+console.log(Math.min(...nums))
+
+console.log(Math.round(12.22)) // округляет число до ближайшего целого
+console.log(Math.floor(12.22)) // округляет вниз до ближайшего целого
+console.log(Math.ceil(12.22)) // округляет вверх до ближайшего целого
+console.log(Math.trunc(12.22)) // округляет до ближайшего целого вниз без учета знака
+

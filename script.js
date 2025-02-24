@@ -212,3 +212,17 @@ if (clearValue.length === 0) {
 if (clearValue.includes('админ')) {
 	alert('Вы не можете занять это имя')
 }
+
+/* №1
+Дано число. Проверьте, отрицательное оно или нет. 
+Выведите об этом информацию в консоль.
+ */
+
+const number = Number(parseInt(prompt('Введите число')))
+
+if (number < 0) {
+	console.log('Число отрицательное')
+} else {
+	console.log('число положительное')
+}
+

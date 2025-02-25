@@ -234,3 +234,39 @@ const arr2 = arr.slice() //копирование массива, также м�
 const totalArr = [...arr, ...arr2] //объединение массива
 const totalArr = arr.concat(arr2) //объединение массива
 
+------------------------------------------------------
+	const letters = ['A', 'B', 'C', 'D', 'F']
+
+letters.forEach((element, index, array) => {}) //перебор массива
+console.log(letters.indexOf('D')) //поиск индекса, который содержится в данном числе
+console.log(letters.includes('A')) //поиск элемента выведет true or false
+
+const users = [
+	{
+		name: 'Михаил',
+		age: 28,
+		city: 'Москва',
+	},
+	{
+		name: 'Александр',
+		age: 28,
+		city: 'Екатеринбург',
+	},
+	{
+		name: 'Василий',
+		age: 28,
+		city: 'Москва',
+	},
+]
+
+const usersFormatted = users.map(user => {
+	return `${user.name}, ${user.age} лет, живет в г. ${user.city}`
+})
+
+const ageSum = users.reduce((sum, user) => {
+	return sum + user.age
+}, 0)
+
+console.log(ageSum / users.length)
+
+console.log(usersFormatted)

@@ -235,38 +235,48 @@ const totalArr = [...arr, ...arr2] //объединение массива
 const totalArr = arr.concat(arr2) //объединение массива
 
 ------------------------------------------------------
-	const letters = ['A', 'B', 'C', 'D', 'F']
+const letters = ['A', 'B', 'C', 'D', 'F']
 
 letters.forEach((element, index, array) => {}) //перебор массива
 console.log(letters.indexOf('D')) //поиск индекса, который содержится в данном числе
+console.log(letters.lastIndexOf('D')) //поиск индекса, который содержится в данном числе,
+// может принимать число с которого производиться поиск
 console.log(letters.includes('A')) //поиск элемента выведет true or false
 
-const users = [
-	{
-		name: 'Михаил',
-		age: 28,
-		city: 'Москва',
-	},
-	{
-		name: 'Александр',
-		age: 28,
-		city: 'Екатеринбург',
-	},
-	{
-		name: 'Василий',
-		age: 28,
-		city: 'Москва',
-	},
-]
+//если в массиве есть объект, то нужно использовать findIndex
+console.log(letters.findIndex(user => user.name === 'Василий'))
+console.log(letters.findLastIndex(() => {}))
 
-const usersFormatted = users.map(user => {
-	return `${user.name}, ${user.age} лет, живет в г. ${user.city}`
+//если нужно проверить элемент в массиве
+
+users.some(user => user.name === 'Василий')
+
+//если нужно проверить каждый элемент в массиве
+console.log(users.every(user => user.age >= 18))
+
+//если мы хотим просто найти какой-то элемент
+users.find(user => user.name === 'Василий')
+
+//если мы хотим отфильтровать
+users.filter(user => user.name === 'Василий')
+
+//позволяет изменить элемент массива
+users.map(user => {
+	return `${user.name}, ${user.age} лет живет в г. ${user.city}`
 })
 
+//перебирает все элементы в массиве
 const ageSum = users.reduce((sum, user) => {
 	return sum + user.age
 }, 0)
 
-console.log(ageSum / users.length)
+//переворачивает исходный массив мутирует
+const reversedUsers = users.reverse()
+//если мы не хотим мутировать, то нужно сделать так
+const reversedUsers = [...users].reverse()
 
-console.log(usersFormatted)
+//сортирует массив по возрастанию и меняет порядок мутирует
+const sortedNames = names.sort()
+//соритировка чисел по возрастанию, надо использовать колбэк функцию,
+// потому что sort странно работает с числами
+const sortedNumber = [...numbers].sort((a, b) => a - b)

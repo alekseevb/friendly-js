@@ -280,3 +280,19 @@ const sortedNames = names.sort()
 //соритировка чисел по возрастанию, надо использовать колбэк функцию,
 // потому что sort странно работает с числами
 const sortedNumber = [...numbers].sort((a, b) => a - b)
+-------------------------------------------------------------------
+const user = {
+	name: 'Александр',
+	age: 28,
+	city: 'Москва',
+}
+
+//получение массива ключей объекта
+const userKeys = Object.keys(user)
+
+//получение массива значений ключей
+const userValues = Object.values(user)
+
+//получение массива элементов, где каждый элемент это еще один массив
+const userEntries = Object.entries(user)
+console.log(userKeys)

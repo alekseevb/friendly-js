@@ -341,4 +341,27 @@ const parseUserData = JSON.parse(userDataAsString)
 
 console.log(userDataAsString)
 console.log(parseUserData)
+---------------------------------------------КЛАССЫ--------------------------------
+//класс - это многофункциональный шаблон для создания объектов
+// он позволяет задать правила, по которым будут работать все объекты в js
 
+class Student {
+	planet = 'Земля'
+	country = 'Россия'
+	region
+
+	constructor(name, age) {
+		this.name = name
+		this.age = age
+	}
+
+	logAge() {
+		console.log(this.age)
+	}
+}
+
+const firstStudent = new Student('Вася', 25)
+const secondStudent = new Student('Петя', 18)
+
+firstStudent.logAge()
+secondStudent.logAge()

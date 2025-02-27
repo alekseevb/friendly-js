@@ -318,3 +318,27 @@ const set = new Set()
 
 //чтобы добавить значение в массив
 set.add()
+-------------------------------------------------JSON-------------------------------
+	const user = {
+	name: 'Александр',
+	age: 28,
+	city: 'Москва',
+	address: {
+		street: 'ул. Пушкина, д. 1, кв. 1',
+		zipcode: 123456,
+	},
+	todos: ['sleep', 'eat', 'work'],
+	hasCat: false,
+	yacht: null,
+}
+
+//чтобы преобразовать в json объект для отправки на сервер
+// stringify будет игнорировать методы и ключи со значением undefined
+const userDataAsString = JSON.stringify(user)
+
+//чтобы преобразовать в js объект после того как файл пришел с сервера
+const parseUserData = JSON.parse(userDataAsString)
+
+console.log(userDataAsString)
+console.log(parseUserData)
+

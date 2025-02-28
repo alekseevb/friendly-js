@@ -365,3 +365,53 @@ const secondStudent = new Student('Петя', 18)
 
 firstStudent.logAge()
 secondStudent.logAge()
+
+//класс - это многофункциональный шаблон для создания объектов
+// он позволяет задать правила, по которым будут работать все объекты в js
+
+class Person {
+	constructor(name, age) {
+		this.name = name
+		this.age = age
+	}
+
+	eat() {
+		console.log('Ем...')
+	}
+	sleep() {
+		console.log('Сплю...')
+	}
+}
+
+const examplePerson = new Person('Вася', 25)
+
+//Если мы хотим, скопировать класс и поменять его значения
+class Developer extends Person {
+	writeCode() {
+		console.log('Пишу код...')
+	}
+
+	//также можно перезаписать метод родительского класса
+	sleep() {
+		console.log('Не хочу спать, пойду еще попишу код...')
+		this.writeCode()
+	}
+}
+
+class JavaScriptDeveloper extends Developer {
+	makeFrontend() {
+		console.log('Пишу фронтенд...')
+	}
+
+	eat() {
+		//если мы хоти использовать метод родительского класса, то надо использовать
+		super.eat()
+		console.log('Смотрю ютуб...')
+	}
+}
+const jsDeveloperExample = new JavaScriptDeveloper('Михаил', '30')
+
+console.log(jsDeveloperExample.name)
+jsDeveloperExample.eat()
+jsDeveloperExample.sleep()
+jsDeveloperExample.makeFrontend()

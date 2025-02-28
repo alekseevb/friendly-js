@@ -415,3 +415,28 @@ console.log(jsDeveloperExample.name)
 jsDeveloperExample.eat()
 jsDeveloperExample.sleep()
 jsDeveloperExample.makeFrontend()
+---------------------------------------------------ИНТЕРВАЛ--------------------------------------
+const logMessage = () => {
+	alert(`Какое-то сообщение`)
+}
+
+//через сколько должна сработать переданная по ссылке функция
+const timerId = setTimeout(logMessage, 3000)
+
+//удаление таймера
+clearTimeout(timerId)
+
+//отработка функции с каким-то интервалом
+const itervalId = setInterval(() => {
+	console.log('hi')
+}, 1000)
+
+//удаление интервала
+// clearInterval(itervalId)
+
+//если мы хотим, чтобы интервала работал како-то время,
+//а потом прекратил, то можно воспользоваться таймером
+
+setTimeout(() => {
+	clearInterval(itervalId)
+}, 5000)

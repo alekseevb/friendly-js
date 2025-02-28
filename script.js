@@ -440,3 +440,11 @@ const itervalId = setInterval(() => {
 setTimeout(() => {
 	clearInterval(itervalId)
 }, 5000)
+
+//interval не ждет когда пользователь завершит действие, поэтому функции могут накладываться друг на друг
+//чтобы этого избежать нужно использовать setTimeout
+setTimeout(function logMessage() {
+	alert('Сообщение раз в 1 секунду')
+
+	setTimeout(logMessage, 1000)
+}, 1000)

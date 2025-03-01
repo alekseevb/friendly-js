@@ -38,3 +38,38 @@ makeRequest(`/api/sellers/${sellerId}`, seller => {
 	})
 })
 
+
+
+/*
+promise    - специальный объект-надстройка 
+для работы с асинхронным кодом
+
+Promise имеет 3 состояния:
+pending    - ожидание, исходное состояние 
+fulfilled  - выполнено успешно, получен результат
+rejected   - выполнено с ошибкой
+
+Основные методы Promise:
+then()     - обрабатывает fulfilled состояние
+catch()    - обрабатывает rejected состояние 
+*/
+
+const promise = new Promise((fulfill, reject) => {
+	console.log('Начало, состояние pending...')
+
+	setTimeout(() => {
+		if (Math.random() > 0.5) {
+			fulfill('Ура, состояние fulfilled')
+		} else {
+			reject('Увы, состояние rejected')
+		}
+	}, 3000)
+})
+
+promise
+	.then(successData => {
+		console.log('Успех! Получены данные', successData)
+	})
+	.catch(errorData => {
+		console.log('Ошибка. Получены данные:', errorData)
+	})

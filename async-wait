@@ -11,3 +11,30 @@ console.log('конец кода...')
 
 // collback функция - это функция, которая вызывается в ответ на совершения определенного события
 
+/* 
+функция, которая осуществляет запрос к серверу и ожидает url адреса и callback функцию,
+которая будет выполнена где-то в makeRequest
+
+задача:
+
+мы разрабатываем фронтенд для маркетплейса по типу ozon/wb.
+Изначально у нас есть id продавца и нам нужно получить имя автора первого отзыва 
+на первый размещенный товар этого продавца
+*/
+
+const sellerId = 154
+
+const makeRequest = (url, onSucces) => {}
+
+makeRequest(`/api/sellers/${sellerId}`, seller => {
+	const firstProductId = seller.productIds[0]
+
+	makeRequest(`/api/products/${firstProductId}`, product => {
+		const firstReviewId = product.reviewsIds[0]
+
+		makeRequest(`/api/products/${firstReviewId}`, review => {
+			const authorName = review.author.name
+		})
+	})
+})
+

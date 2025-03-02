@@ -38,6 +38,33 @@ makeRequest(`/api/sellers/${sellerId}`, seller => {
 	})
 })
 
+------------------------------------лучше сделать через promise-------------------
+const makeRequest = (url, onSucces) => {
+	return new Promise(fulfill => {
+		fulfill('Ура, состояние fullfilled')
+	})
+}
+
+const sellerId = 154
+
+makeRequest(`/api/sellers/${sellerId}`)
+	.then(seller => {
+		const firstProductId = seller.productIds[0]
+
+		return makeRequest(`/api/products/${firstProductId}`)
+	})
+	.then(product => {
+		const firstReviewId = product.reviewsIds[0]
+
+		return makeRequest(`/api/products/${firstReviewId}`)
+	})
+	.then(review => {
+		const authorName = review.author.name
+	})
+	.catch(error => {
+		console.log(error)
+	})
+
 
 
 /*

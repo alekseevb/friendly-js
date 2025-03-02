@@ -65,6 +65,27 @@ makeRequest(`/api/sellers/${sellerId}`)
 		console.log(error)
 	})
 
+--------------------------------------------------или так---------------------------
+const makeRequest = async (url, onSucces) => {
+	return new Promise(fulfill => {
+		fulfill('Ура, состояние fullfilled')
+	})
+}
+
+try {
+	const sellerId = 154
+
+	const seller = await makeRequest(`/api/sellers/${sellerId}`)
+	const firstProductId = seller.productIds[0]
+
+	const product = await makeRequest(`/api/products/${firstProductId}`)
+	const firstReviewId = product.reviewsIds[0]
+
+	const review = await makeRequest(`/api/products/${firstReviewId}`)
+	const authorName = review.author.name
+} catch (error) {
+	console.log(error)
+}
 
 
 /*

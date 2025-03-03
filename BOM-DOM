@@ -23,3 +23,25 @@ console.log(window.XMLHttpRequest)
 //DOM (Document Object Model)
 console.log('-------------DOM (Document Object Model)-------------')
 console.log(window.document)
+
+----------------------------------------------------------------------------------------------------------------
+
+//BOM (Browser Object Model)
+console.log('Информация о браузере', window.navigator)
+console.log('Информация об экране', window.screen)
+console.log('Информация об URL', window.location)
+console.log('Информация об истории текущей сессии', window.history)
+
+//Сохранить данные в localStorage
+window.localStorage.setItem('id', JSON.stringify({ id: 123 }))
+
+const id = JSON.parse(
+	//Получить данные из localStorage
+	window.localStorage.getItem('key-name')
+)
+
+//Отправка на сервер GET-запроса и получение ответа
+window
+	.fetch('https://jsonplaceholder.typicode.com/users')
+	.then(response => response.json())
+	.then(users => console.log('Пользователи:', users))

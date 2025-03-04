@@ -88,5 +88,23 @@ console.log(
 	divElement.lastElementChild
 )
 
+const buttonElement = document.getElementById('myButton')
+
+//Если мы хотим найти элемент не по id, а по имени селектора
+const buttonElement2 = document.querySelector('button')
+
+console.log('buttonElement:', buttonElement)
+console.log('buttonElement:', buttonElement2)
+
+// Если мы ищем какой-то элемент в html, то лучше его называть, как element
+const linkElement = document.querySelector('a')
+const listElement = document.querySelector('li')
+const formElement = document.querySelector('form')
+const inputElement = document.querySelector('input')
+
+//Как лучше находить элементы в DOM-дереве = лучше через data атрибуты
+const sliderElement = document.querySelector('[data-js-slider-]')
+const sliderListElement = document.querySelector('[data-js-slider-list]')
+const sliderSlideElement = document.querySelectorAll('[data-js-slider-slide]')
 
 

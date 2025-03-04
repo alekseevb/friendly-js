@@ -53,4 +53,40 @@ console.log('Соседний элемент после <body>:', document.body.
 
 console.log('Дочерние элементы <body>', document.body.children)
 
+const bodyChildren = document.body.children
+
+console.log(bodyChildren)
+
+//Создание нового элемента <button>
+const newButtonElement = document.createElement('button')
+
+//Добавление нового элемента <button> в <body> в конец
+document.body.appendChild(newButtonElement)
+
+console.log(bodyChildren)
+
+//Чтобы перебрать htmlCollection надо предварительно перевести в массив
+const bodyChildrenArray = [...bodyChildren]
+
+bodyChildrenArray.forEach(element => {
+	console.log('Дочерний элемент <body>:', element)
+})
+
+//Так можно обратиться к первому дочернему элементу
+const divElement = document.body.children[0]
+
+console.log('Элемент <div>:', divElement)
+
+//Так можно обратиться к первому и последнему дочернему элементу
+console.log(
+	'Первый дочерний элемент внутри <div>:',
+	divElement.firstElementChild
+)
+
+console.log(
+	'Первый дочерний элемент внутри <div>:',
+	divElement.lastElementChild
+)
+
+
 

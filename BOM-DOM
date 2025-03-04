@@ -106,5 +106,22 @@ const inputElement = document.querySelector('input')
 const sliderElement = document.querySelector('[data-js-slider-]')
 const sliderListElement = document.querySelector('[data-js-slider-list]')
 const sliderSlideElement = document.querySelectorAll('[data-js-slider-slide]')
+--------------------------------------------------------------------------------------------------------------
+//Если у нас указан какой-то специальный атрибут, которого нет в DOM элемента, то можно использовать:
+const formElement = document.querySelector('.form')
+
+formElement.getAttribute('qwerty')
+formElement.getAttribute('data-some-value')
+
+//Если нам надо поменять значение специального атрибута, то нужно использовать
+formElement.setAttribute('qwerty', '0')
+formElement.setAttribute('data-some-value', '1')
+
+//Чтобы удалить атрибут
+formElement.removeAttribute('qwerty')
+formElement.removeAttribute('data-some-value')
+
+//Проверка существует ли данный указанный атрибут
+formElement.hasAttribute('qwerty') //выведет false
 
 

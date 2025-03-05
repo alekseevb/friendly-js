@@ -1,0 +1,34 @@
+const boxElement = document.querySelector('.box')
+
+console.log('Полная ширина', boxElement.offsetWidth)
+console.log('Полная высота', boxElement.offsetHeight)
+
+console.log(
+	'Расстояние от левой границы элемента до внутренностей',
+	boxElement.clientLeft
+)
+console.log(
+	'Расстояние от верхней границы элемента до внутренностей',
+	boxElement.clientTop
+)
+
+console.log('Ширина без учета рамки и скроллбара', boxElement.clientWidth)
+console.log('Высота без учета рамки и скроллбара', boxElement.clientHeight)
+
+console.log(
+	'Ширина без учета рамки, включая прокручиваемую область',
+	boxElement.scrollWidth
+)
+console.log(
+	'Высота без учета рамки, включая прокручиваемую область',
+	boxElement.scrollHeight
+)
+
+console.log(
+	'Ширина невидимой уже прокрученной по горизонтали области',
+	boxElement.scrollLeft
+)
+console.log(
+	'Высота невидимой уже прокрученной по вертикали области',
+	boxElement.scrollTop
+)

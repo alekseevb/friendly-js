@@ -1,0 +1,35 @@
+const boxElement = document.querySelector('.box')
+
+// boxElement.style.position = 'absolute'
+// boxElement.style.top = '40px'
+// boxElement.style.left = '80px'
+
+//Можно задавать стили группой
+boxElement.style.cssText += `
+position: absolute;
+top: 40px;
+left: 80px;`
+
+//Чтобы вычислить стили нужно обратиться через глобальную функцию
+console.log(
+	'Вычисление значений стилей boxElement',
+	getComputedStyle(boxElement).width
+)
+
+//Добавление класса
+boxElement.classList.add('red', 'big')
+
+//Удаление класса
+boxElement.classList.remove('big')
+
+//Переключатель класса, добавляет класс если его нет и удаляет, если он есть
+boxElement.classList.toggle('red')
+
+//Имеет ли элемент указанный класс и возвращает true или false
+console.log(
+	'Есть ли класс red у элемента boxElement',
+	boxElement.classList.contains('red')
+)
+
+//Управление css переменными
+boxElement.style.setProperty('--border-color', 'red')

@@ -1,0 +1,39 @@
+const firstBoxElement = document.querySelector('.box-1')
+const secondBoxElement = document.querySelector('.box-2')
+const thirdParagraphElement = document.querySelector('.paragraph-3')
+const fourthParagraphElement = document.querySelector('.paragraph-4')
+const ParagraphElement = document.querySelector('.paragraph-5')
+
+//Создаем новый элемент <p>
+const getNewParagraphElement = () => {
+	const newParagraphElement = document.createElement('p')
+	newParagraphElement.textContent = 'Новый параграф'
+
+	return newParagraphElement
+}
+
+//Вставляем элемент <p> в начало box-1
+firstBoxElement.append(getNewParagraphElement())
+
+//Вставляем элемент <p> в конец box-2
+firstBoxElement.prepend(getNewParagraphElement())
+
+//Вставляем элемент <p> перед paragraph-3
+thirdParagraphElement.before(getNewParagraphElement())
+
+//Вставляем элемент <p> после paragraph-4
+thirdParagraphElement.after(getNewParagraphElement())
+
+//Вставляем элемент <p> с заменой paragraph-5
+thirdParagraphElement.replaceWith(getNewParagraphElement())
+
+//удаление
+firstBoxElement.remove()
+
+const newParagraphElement = document.createElement('p')
+newParagraphElement.textContent = 'Просто текст'
+
+firstBoxElement.insertAdjacentElement('afterbegin', newParagraphElement)
+firstBoxElement.insertAdjacentElement('afterend', newParagraphElement)
+firstBoxElement.insertAdjacentElement('beforebegin', newParagraphElement)
+firstBoxElement.insertAdjacentElement('beforeend', newParagraphElement)

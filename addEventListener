@@ -1,0 +1,29 @@
+const firstButtonElement = document.querySelector('.button-1')
+const secondButtonElement = document.querySelector('.button-2')
+const testButtonElement = document.querySelector('.test')
+
+const logMessage = () => {
+	console.log('Произошел клик')
+}
+
+//Добавить прослушивание на клик, однако таким способом нельзя добавить несколько прослушиваний
+// buttonElement.onclick = logMessage
+
+//тоже самое прослушивание, но на один DOM элемент можно добавить несколько прослушиваний
+firstButtonElement.addEventListener('click', logMessage)
+
+secondButtonElement.addEventListener('click', () => {
+	//Удаление прослушивания
+	firstButtonElement.removeEventListener('click', logMessage)
+})
+
+//В рамках функции обработчика события через первый параметр этой функции у нас есть доступ к объекту,
+// который будет содержать подробную информацию о случившемся событии
+
+testButtonElement.addEventListener('click', event => {
+	//event.target будет равен child, так как это элемент, на который кликнул пользователь.
+	console.log(event.target)
+	//event.currentTarget и this будут равны parent, поскольку это элемент,
+	//  на котором установлен обработчик события.
+	console.log(event.currentTarget)
+})

@@ -1,0 +1,18 @@
+const buttonElement = document.querySelector('.button')
+
+buttonElement.addEventListener('click', () => {
+	console.log('Произошел клик')
+})
+
+//будет генерироваться пока мы ведем мышь вдоль кнопки
+buttonElement.addEventListener('mousemove', () => {
+	console.log('mousemove')
+})
+
+buttonElement.addEventListener('mousemove', () => {
+	console.log('Курсор навели на элемент кнопки')
+})
+
+buttonElement.addEventListener('mousemove', () => {
+	console.log('Курсор увели с элемента кнопки')
+})
